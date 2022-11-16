@@ -28,14 +28,14 @@ for line in lines1:
 
 # START OF OUTER LOOP <---------
 while True:
-    start = int(input("Welcome to Julio's Cafe \n\
+    start = int(input("\nWelcome to Julio's Cafe \n\
     Here are our Main Menu Options: \n\
     0. Exit \n\
     1. Products Menu \n\
     2. Couriers Menu \n\
     3. Orders Menu \n\
     >> "))
-
+    
     if start == 0: # start(0) == 0 => TRUE, start(1) == 0 => FALSE
 
         # save product list to products.txt 
@@ -69,7 +69,7 @@ while True:
                 print()
                 break 
                 
-           # product list
+        # product list
             if product_menu_option == 1:
                 print("\nProduct list: ", product_list)
                 print()
@@ -101,12 +101,22 @@ while True:
                 print()
                 print(list(enumerate(product_list)))
                 print()
-                product_index = int(input("Product Index: "))
-                product_name = input("Product Name: ")
-                product_list[product_index] = product_name
-                print("\nProduct list: ", product_list)
-                print()
-                product_menu_option = int(input("Please select one of the following options: \n\
+
+                while True:
+                    try:
+                        product_index = int(input("Product Index: "))
+                        if product_index > len(product_list)-1:
+                            raise Exception
+                    except Exception:
+                        print()
+                        print('Product index is invalid. Please try again')
+                        print()
+                    else:
+                        product_name = input("Product Name: ")
+                        product_list[product_index] = product_name
+                        print("\nProduct list: ", product_list)
+                        print()
+                        product_menu_option = int(input("Please select one of the following options: \n\
         0. Return to Main Menu \n\
         1. View the product list \n\
         2. Add a new product to the list \n\
@@ -118,11 +128,22 @@ while True:
             elif product_menu_option == 4:
                 print()
                 print(list(enumerate(product_list)))
-                product_index = int(input("Product Index: "))
-                del product_list[product_index]
-                print("\nProduct list: ", product_list)
-                print()
-                product_menu_option = int(input("Please select one of the following options: \n\
+
+                while True:
+                    try:
+                        print()
+                        product_index = int(input("Product Index: "))
+                        del product_list[product_index]
+                        if product_index > len(product_list)-1:
+                            raise Exception
+                    except Exception:
+                        print()
+                        print('Product index is invalid. Please try again')
+                        print()
+                    else:
+                        print("\nProduct list: ", product_list)
+                        print()
+                        product_menu_option = int(input("Please select one of the following options: \n\
         0. Return to Main Menu \n\
         1. View the product list \n\
         2. Add a new product to the list \n\
