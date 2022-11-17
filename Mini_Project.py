@@ -16,6 +16,8 @@ read_file('products.csv', product_list)
 read_file('couriers.csv', couriers_list)
 read_file('orders.csv', orders_list)
 
+# function to save lists to .csv files
+
 def write_file(filename, loading_list):
     with open(f'{filename}', mode='w') as file:
         keys = loading_list[0].keys()
