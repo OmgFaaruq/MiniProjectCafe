@@ -1,30 +1,33 @@
 product_list = []
-
 couriers_list = []
-
 orders_list = []
+ 
+# function to load lists from .csv files
+import csv
+
+def read_file(filename, loading_list):
+    with open(f'{filename}', 'r') as file:
+        reader = csv.DictReader(file, delimiter= ',')
+        for row in reader:
+            loading_list.append(row)    
+    return
+
+read_file('products.csv', product_list)
+read_file('couriers.csv', couriers_list)
+read_file('orders.csv', orders_list)
+
+def write_file(filename, loading_list):
+    with open(f'{filename}', mode='w') as file:
+        keys = loading_list[0].keys()
+        dict_writer = csv.DictWriter(file, keys)
+        dict_writer.writeheader()
+        dict_writer.writerows(loading_list)
+    return
+
+
+
 
 order_status_list = ['PREPARED', 'OUT FOR DELIVERY', 'DELIVERED']
-
-
-# load product list from products.txt
-products_file = open("products.txt", 'r')
-
-lines = products_file.readlines() 
-for line in lines:
-    product = line.strip()    
-    product_list.append(product)
-
-
-# load couriers list from couriers.txt
-couriers_file = open('couriers.txt', 'r')
-
-lines1 = couriers_file.readlines()
-for line in lines1:
-    couriers = line.strip()
-    couriers_list.append(couriers)
-
-
 
 # START OF OUTER LOOP <--------- Beginning of UI
 while True:
@@ -37,18 +40,13 @@ while True:
     >> "))
     
     if start == 0: # start(0) == 0 => TRUE, start(1) == 0 => FALSE
-
-        # save product list to products.txt 
-        with open("products.txt", 'w') as f:
-            for product in product_list:
-                f.write(product + '\n')
-
-        # save couriers list to couriers.txt
-        with open("couriers.txt", 'w') as f:
-            for courier in couriers_list:
-                f.write(courier + '\n')
+        
+        # Savings lists to .csv
+        write_file('products.csv', product_list)
+        write_file('couriers.csv', couriers_list)
+        write_file('orders.csv', orders_list)
         break
-
+        
     elif start == 1:
         print()
         print("Product Menu Options")
@@ -87,7 +85,7 @@ while True:
                 product_name = input('What is the new product you would like to add? ')
                 product_price = float(input(f'What is the price of {product_name}? '))
                 product = {
-                    'name': product_name,
+                    'product': product_name,
                     'price': product_price
                     }
                 product_list.append(product)
@@ -124,7 +122,7 @@ while True:
                         updated_product_name = input('Please input updated product name, otherwise click Enter: ')
                         updated_product_price = input('Please input updated product price, otherwise click Enter: ')
                         for key, value in product_to_update.items():
-                            if key == 'name':
+                            if key == 'product':
                                 if not updated_product_name:
                                     continue
                                 else:
