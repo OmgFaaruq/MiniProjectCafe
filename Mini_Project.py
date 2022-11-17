@@ -84,17 +84,22 @@ while True:
             # adding item to product list
             elif product_menu_option == 2:
                 print()
-                product_name = input("What is the new product you would like to add? ")
-                product_list.append(product_name)
+                product_name = input('What is the new product you would like to add? ')
+                product_price = float(input(f'What is the price of {product_name}? '))
+                product = {
+                    'name': product_name,
+                    'price': product_price
+                    }
+                product_list.append(product)
                 print("\nProduct list: ", product_list)
                 print()
-                product_menu_option = int(input("Please select one of the following options: \n\
+                product_menu_option = int(input('Please select one of the following options: \n\
         0. Return to Main Menu \n\
         1. View the product list \n\
         2. Add a new product to the list \n\
         3. Update an exisiting product \n\
         4. Delete a product \n\
-        >> "))            
+        >> '))            
             
             # update exisiting product
             elif product_menu_option == 3:
@@ -189,7 +194,12 @@ while True:
             # create new courier
             elif courier_menu_option == 2:
                 print()
-                new_courier = input('Please input courier name: ')
+                courier_name = input('Please input courier name: ')
+                courier_phone = int(input('Please input courier\'s phone number: '))
+                new_courier = {
+                    'name': courier_name,
+                    'phone': courier_phone
+                }
                 print()
                 couriers_list.append(new_courier)
                 print('\nCouriers List: ', couriers_list)
@@ -310,15 +320,15 @@ while True:
                 for (count, item) in enumerate(couriers_list):
                     print(count, item, sep = " ")
                 print()
+                print()
                 courier_index_value = int(input('Please select courier: '))
-                courier_selected = couriers_list[courier_index_value]
                 order_status = 'PREPARING'
                 new_order = {
                     'Customer Name': customer_name,
                     'Customer Address': customer_address,
                     'Customer Phone': customer_phone,
-                    'Courier': courier_selected,
-                    'Order Status': order_status
+                    'Courier': courier_index_value,
+                    'Order Status': order_status,
                 }
                 orders_list.append(new_order)
                 print()
