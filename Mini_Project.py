@@ -2,8 +2,10 @@ product_list = []
 couriers_list = []
 orders_list = []
  
-# function to load lists from .csv files
+
 import csv
+
+# function to load lists from .csv files
 
 def read_file(filename, loading_list):
     with open(f'{filename}', 'r') as file:
@@ -15,6 +17,7 @@ def read_file(filename, loading_list):
 read_file('products.csv', product_list)
 read_file('couriers.csv', couriers_list)
 read_file('orders.csv', orders_list)
+
 
 # function to save lists to .csv files
 
@@ -28,8 +31,9 @@ def write_file(filename, loading_list):
 
 
 
-
 order_status_list = ['PREPARED', 'OUT FOR DELIVERY', 'DELIVERED']
+
+
 
 # START OF OUTER LOOP <--------- Beginning of UI
 while True:
@@ -70,7 +74,7 @@ while True:
                 break 
                 
         # product list
-            if product_menu_option == 1:
+            elif product_menu_option == 1:
                 print("\nProduct list: ", product_list)
                 print()
                 product_menu_option = int(input("Please select one of the following options: \n\
@@ -171,7 +175,7 @@ while True:
         3. Update an exisiting product \n\
         4. Delete a product \n\
         >> "))
-                        break
+                    break
 
         # END of Prodcut Menu Option INNER LOOP <---------
 
@@ -197,7 +201,7 @@ while True:
                 break 
 
             # print couriers list
-            if courier_menu_option == 1:
+            elif courier_menu_option == 1:
                 print('\nCouriers List: ', couriers_list)
                 print()
                 courier_menu_option = int(input("Please select one of the following options: \n\
@@ -329,7 +333,7 @@ while True:
                 break
 
             # print orders list
-            if orders_menu_section == 1:
+            elif orders_menu_section == 1:
                 print('\nOrders: ', orders_list)
                 print()
                 orders_menu_section = int(input("Please select one of the following options: \n\
