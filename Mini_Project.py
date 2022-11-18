@@ -73,7 +73,7 @@ while True:
                 print()
                 break 
                 
-        # product list
+            # Printing product list
             elif product_menu_option == 1:
                 print("\nProduct list: ", product_list)
                 print()
@@ -85,7 +85,7 @@ while True:
         4. Delete a product \n\
         >> "))
             
-            # adding item to product list
+            # Adding item to product list
             elif product_menu_option == 2:
                 print()
                 product_name = input('What is the new product you would like to add? ')
@@ -149,7 +149,7 @@ while True:
         >> "))
                         break
 
-            # delete product
+            # Delete product
             elif product_menu_option == 4:
                 print()
                 print('Products:')
@@ -195,12 +195,12 @@ while True:
         #START of COURIER INNER LOOP
         while True:
 
-            #return to Main Menu
+            # Return to Main Menu
             if courier_menu_option == 0:
                 print()
                 break 
 
-            # print couriers list
+            # Print couriers list
             elif courier_menu_option == 1:
                 print('\nCouriers List: ', couriers_list)
                 print()
@@ -212,7 +212,7 @@ while True:
         4. Delete courier \n\
         >> "))
 
-            # create new courier
+            # Create new courier
             elif courier_menu_option == 2:
                 print()
                 courier_name = input('Please input courier name: ')
@@ -233,7 +233,7 @@ while True:
         4. Delete courier \n\
         >> "))
 
-            # update exisiting courier
+            # Update exisiting courier
             elif courier_menu_option ==3:
                 print()
                 print('Couriers:')
@@ -280,7 +280,7 @@ while True:
         >> "))
                     break
 
-            # delete courier
+            # Delete courier
             elif courier_menu_option == 4:
                 print()
                 print('Courtiers:')
@@ -332,7 +332,7 @@ while True:
                 print()
                 break
 
-            # print orders list
+            # Print orders list
             elif orders_menu_section == 1:
                 print('\nOrders: ', orders_list)
                 print()
@@ -345,7 +345,7 @@ while True:
         5. Delete order \n\
         >> "))
 
-            # create an order
+            # Create an order
             elif orders_menu_section == 2:
                 print()
                 customer_name = input('Input Name: ')
@@ -389,7 +389,7 @@ while True:
         5. Delete order press \n\
         >> "))
 
-            # update exisiting order status
+            # Update exisiting order status
             elif orders_menu_section == 3:
                 for (count, item) in enumerate(orders_list):
                     print(count, item, sep = ' ')
@@ -425,7 +425,7 @@ while True:
         >> "))
                         break
                 
-            # update existiting order:
+            # Update existiting order:
             elif orders_menu_section == 4:
                 print()
                 for (count, item) in enumerate(orders_list):
@@ -477,7 +477,7 @@ while True:
         >> "))
                     break
 
-            # delete order 
+            # Delete order 
             elif orders_menu_section == 5:
                 for (count, item) in enumerate(orders_list):
                     print(count, item, sep = " ")
