@@ -18,7 +18,6 @@ def test_create_product_and_add_to_product_list():
 
 from product import updating_existing_product
 
-
 def test_updating_existing_product():
     
     # Assemble
