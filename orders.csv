@@ -1,3 +1,8 @@
-Customer Name,Customer Address,Customer Phone,Courier,Order Status,Items
-Lola,Buckingham Palace,767676,3,OUT FOR DELIVERY,0
-Mick Carter,Queen Victoria,873462,2,PREPARING,3
+Customer Name,Customer Address,Customer Phone,Courier,Order Status,Items
+
+Lola,Buckingham Palace,767676,3,OUT FOR DELIVERY,0
+
+Mick Carter,Queen Victoria,873462,2,PREPARING,3
+
+Lula,Brazil,742136,2,PREPARED,"['1', '2']"
+
