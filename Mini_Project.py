@@ -5,6 +5,11 @@ orders_list = []
 
 import csv
 
+# Imports from product.py
+
+from product import create_product_and_add_to_product_list, updating_existing_product, create_courier_and_append_to_couriers_list, updating_exisiting_courier, create_order_and_append_to_orders_list, updating_exisiting_order_status
+
+
 # function to load lists from .csv files
 
 def read_file(filename, loading_list):
@@ -90,11 +95,7 @@ while True:
                 print()
                 product_name = input('What is the new product you would like to add? ')
                 product_price = float(input(f'What is the price of {product_name}? '))
-                product = {
-                    'product': product_name,
-                    'price': product_price
-                    }
-                product_list.append(product)
+                product_list = create_product_and_add_to_product_list(product_name, product_price, product_list)
                 print("\nProduct list: ", product_list)
                 print()
                 product_menu_option = int(input('Please select one of the following options: \n\
@@ -127,17 +128,8 @@ while True:
                         print()
                         updated_product_name = input('Please input updated product name, otherwise click Enter: ')
                         updated_product_price = input('Please input updated product price, otherwise click Enter: ')
-                        for key, value in product_to_update.items():
-                            if key == 'product':
-                                if not updated_product_name:
-                                    continue
-                                else:
-                                    product_to_update[key] = updated_product_name
-                            if key == 'price':
-                                if not updated_product_price:
-                                    continue
-                                else:
-                                    product_to_update[key] = updated_product_price
+                        product_to_update = updating_existing_product(product_to_update, updated_product_name, updated_product_price)
+                        print()
                         print('Updated product: ', product_to_update)
                         print()
                         product_menu_option = int(input("Please select one of the following options: \n\
@@ -217,12 +209,7 @@ while True:
                 print()
                 courier_name = input('Please input courier name: ')
                 courier_phone = int(input('Please input courier\'s phone number: '))
-                new_courier = {
-                    'name': courier_name,
-                    'phone': courier_phone
-                }
-                print()
-                couriers_list.append(new_courier)
+                couriers_list = create_courier_and_append_to_couriers_list(courier_name, courier_phone, couriers_list)
                 print('\nCouriers List: ', couriers_list)
                 print()
                 courier_menu_option = int(input("Please select one of the following options: \n\
@@ -255,17 +242,7 @@ while True:
                         print()
                         updated_courier_name = input('Please input updated courier\'s name, otherwise click Enter: ')
                         updated_courier_phone = input('Please input updated courier\'s phone numbers, otherwise click Enter: ')
-                        for key, value in courier_to_update.items():
-                            if key == 'name':
-                                if not updated_courier_name:
-                                    continue
-                                else:
-                                    courier_to_update[key] = updated_courier_name
-                            if key == 'phone':
-                                if not updated_courier_phone:
-                                    continue
-                                else:
-                                    courier_to_update[key] = updated_courier_phone
+                        courier_to_update = updating_exisiting_courier(courier_to_update, updated_courier_name, updated_courier_phone)
                         print()
                         print('Couriers:')
                         for (count, item) in enumerate(couriers_list):
@@ -356,8 +333,15 @@ while True:
                 print()
                 for (count, item) in enumerate(product_list):
                     print(count, item, sep = " ")
-                print()
-                product_list_choice = input("Please input the indices of the product you would like to add to your order and separate them by a comma: ")
+                    print()
+                customers_items = []
+                while True:
+                    product_list_index = input("Please input the index of the product you would like to add to your order, press Enter when you are finished: ")
+                    customers_items.append(product_list_index)
+                    if product_list_index == '':
+                        customers_items.pop()
+                        break                
+                customers_items = list(customers_items)
                 print()
                 print('Couriers:')
                 print()
@@ -368,17 +352,9 @@ while True:
                 print()
                 print('Product:')
                 order_status = 'PREPARING'
-                new_order = {
-                    'Customer Name': customer_name,
-                    'Customer Address': customer_address,
-                    'Customer Phone': customer_phone,
-                    'Courier': courier_index_value,
-                    'Order Status': order_status,
-                    'Items': product_list_choice,
-                }
-                orders_list.append(new_order)
+                orders_list = create_order_and_append_to_orders_list(customer_name, customer_address, customer_phone, customers_items, courier_index_value, order_status, orders_list)
                 print()
-                print(new_order)
+                print(orders_list)
                 print()
                 orders_menu_section = int(input("Please select one of the following options: \n\
         0. Return to main menu \n\
@@ -386,7 +362,7 @@ while True:
         2. Create a new order \n\
         3. Update existing order status \n\
         4. Update exisiting order \n\
-        5. Delete order press \n\
+        5. Delete order \n\
         >> "))
 
             # Update exisiting order status
@@ -411,8 +387,7 @@ while True:
                             print(count, item, sep = ' ')
                         print()
                         new_order_status_index = int(input('Please select an index from the Order Status List: '))
-                        new_order_status = order_status_list[new_order_status_index]
-                        order_to_update['Order Status'] = new_order_status
+                        order_to_update = updating_exisiting_order_status(order_status_list, new_order_status_index, order_to_update)
                         print('\nUpdated Order: ', order_to_update)
                         print()
                         orders_menu_section = int(input("Please select one of the following options: \n\
