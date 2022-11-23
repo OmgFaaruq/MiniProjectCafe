@@ -6,12 +6,12 @@ Our client has launched a pop-up café in a busy business district. They are off
 
 ### Client Requirements:
 
-• Maintain a collection of products and couriers.
-• When a customer makes a new order, create this on the system.
-• Update the status of an order i.e: preparing, out-for-delivery, delivered.
-• When I exit my app, all data needs to be persisted and not lost.
-• When I start my app, all persisted data needs to be loaded onto the system.
-• Ensure my app has been tested and proven to work well.
+- Maintain a collection of products and couriers.
+- When a customer makes a new order, create this on the system.
+- Update the status of an order i.e: preparing, out-for-delivery, delivered.
+- When I exit my app, all data needs to be persisted and not lost.
+- When I start my app, all persisted data needs to be loaded onto the system.
+- Ensure my app has been tested and proven to work well.
 
 
 ### How did your design go about meeting the project's requirements?
