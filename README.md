@@ -19,6 +19,46 @@ Our client has launched a pop-up café in a busy business district. They are off
 My main thoughts regarding the design of this software was functionality and how easy it was to use. During the development, the user was at the forefront of my mind.
 As each week was released I implemented the new requirements in chronological order.
 
+### Overview
+
+Welcome to Julio's Cafe
+    Here are our Main Menu Options:
+    0. Exit
+    1. Products Menu
+    2. Couriers Menu
+    3. Orders Menu
+    >>
+    
+    Product Menu Options
+
+    Please select one of the following options: 
+        0. Return to Main Menu 
+        1. View the product list 
+        2. Add a new product to the list    
+        3. Update an exisiting product      
+        4. Delete a product 
+        >> 
+
+    Couriers Menu Options
+
+    Please select one of the following options: 
+        0. Return to Main Menu
+        1. View couriers list
+        2. Create new courier
+        3. Update existing courier
+        4. Delete courier
+        >>
+        
+     Orders Menu Options
+
+     Please select one of the following options: 
+        0. Return to main menu 
+        1. View the orders dictionary       
+        2. Create a new order 
+        3. Update existing order status     
+        4. Update exisiting order 
+        5. Delete order 
+        >> 
 
 ### How did you guarantee the project's requirements?
 
