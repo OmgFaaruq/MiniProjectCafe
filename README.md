@@ -21,7 +21,8 @@ As each week was released I implemented the new requirements in chronological or
 
 ### Overview
 
-Welcome to Julio's Cafe
+Welcome to Julio's Cafe:
+
     Here are our Main Menu Options:
     0. Exit
     1. Products Menu
