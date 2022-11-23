@@ -5,30 +5,32 @@ Project Background:
 Our client has launched a pop-up café in a busy business district. They are offering home-made lunches and refreshments to the surrounding offices. As such, they require a software application which helps them to log and track orders.
 
 Client Requirements:
-I want to maintain a collection of products and couriers.
-When a customer makes a new order, I need to create this on the
-system.
-I need to be able to update the status of an order i.e: preparing,
-out-for-delivery, delivered.
-• When I exit my app, I need all data to be persisted and not lost.
-• When I start my app, I need to load all persisted data.
-• I need to be sure my app has been tested and proven to work well.
-• I need to receive regular software updates
+
+• Maintain a collection of products and couriers.
+• When a customer makes a new order, create this on the system.
+• Update the status of an order i.e: preparing, out-for-delivery, delivered.
+• When I exit my app, all data needs to be persisted and not lost.
+• When I start my app, all persisted data needs to be loaded onto the system.
+• Ensure my app has been tested and proven to work well.
 
 
 How did your design go about meeting the project's requirements?
-collection of anything is lists so I created a product list, courier list and orders list
-allow the user to choose which order in the order list they wanted to update. Once that was chosen, give them an option of statuses they could update the order with.
 
+My main thoughts regarding the design of this software was functionality and how easy it was to use. During the development, the user was at the forefront of my mind.
+As each week was released I implemented the new requirements in chronological order.
 
 
 
 How did you guarantee the project's requirements?
 
+Unit Testing was the way in which I ensured requirements were met. This included quite a bit of refractoring as well as being selective in what needed to be tested. I have written tests for all core functions in the test.py file above. 
 
 
-If you had more time, what is one thing you would improve upon?
+If you had more time, how you would improve upon?
 
+Implement week 5 and 6 of the clients specification as well as input try-except blocks at every point of user input.
 
 
 What did you most enjoy implementing?
+
+Whilst each week had it's challenges, implementing try-except blocks which stopped my code from breaking because of an incorrect input and instead raised an error message and allowed the user to input something else has been extremely useful especially when someone else use's the app.
