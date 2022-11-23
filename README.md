@@ -1,10 +1,8 @@
 # MiniProjectCafe
 
 Project Background:
-Your client has launched a pop-up café in a busy business district. They
-are offering home-made lunches and refreshments to the surrounding
-offices. As such, they require a software application which helps them to
-log and track orders.
+
+Our client has launched a pop-up café in a busy business district. They are offering home-made lunches and refreshments to the surrounding offices. As such, they require a software application which helps them to log and track orders.
 
 Client Requirements:
 I want to maintain a collection of products and couriers.
