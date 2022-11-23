@@ -24,7 +24,7 @@ As each week was released I implemented the new requirements in chronological or
 Welcome to Julio's Cafe:
 
     Here are our Main Menu Options:
-    0. Exit
+    0. Save & Exit
     1. Products Menu
     2. Couriers Menu
     3. Orders Menu
