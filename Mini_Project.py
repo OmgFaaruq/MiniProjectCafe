@@ -1,7 +1,7 @@
 product_list = []
 couriers_list = []
 orders_list = []
- 
+order_status_list = ['PREPARED', 'OUT FOR DELIVERY', 'DELIVERED']
 
 import csv
 
@@ -33,10 +33,6 @@ def write_file(filename, loading_list):
         dict_writer.writeheader()
         dict_writer.writerows(loading_list)
     return
-
-
-
-order_status_list = ['PREPARED', 'OUT FOR DELIVERY', 'DELIVERED']
 
 
 
